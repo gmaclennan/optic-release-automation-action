@@ -122,6 +122,7 @@ module.exports = async function ({ context, inputs, packageVersion }) {
   await execWithOutput('git', ['add', '-A'])
   await execWithOutput('git', [
     'commit',
+    '--allow-empty',
     '-m',
     `${transformCommitMessage(messageTemplate, newVersion)}`,
   ])
